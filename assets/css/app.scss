@@ -1,7 +1,9 @@
-$body:#000;
+$font:crimson;
+
 
 
 
 body {
-  background: $body
+     background: linear-gradient(to right,#731de4 0,#05a2d4 100%);
+        color:$font
 }
