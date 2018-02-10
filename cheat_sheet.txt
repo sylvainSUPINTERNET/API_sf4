@@ -1,0 +1,39 @@
+Quick start
+
+edit .env (doctrine / db config)
+=> php bin/console doctrine:database:create
+
+composer require server
+composer require twig
+composer require asset
+composer require generator (maker-bundle)
+composer require annotations
+composer require form
+ composer require validator (assert for entity, if we create TypeForm for validation ($form->isValid() ... will automaticly go to check assert into entity to define contrainst)
+composer require encore (dont forget to setting webpack.conf)
+(to run encore, open another shell and run )
+=> npm install
+=> .\node_module\.bin\encore dev IT WILL compile your assets files into /public/build by default
+=> .\node_module\.bin\encore dev-server (--watch) (server for hot reload but not rly work)
+=> if crash install dependancies with npm
+If one bugs is occurend dont forget to install dependencies via npm install --save ...
+npm install --save sass-loader
+npm install --save jquery 
+npm install --save node-sass
+Jquery and SCSS is automaticly added by config into webpack (to decomment ofc and dont forget to create folder + file into assets (as indicate into StyleEntry and JSEntry config webpack)
+
+
+
+=> php bin/console make:controller User
+=> php bin/console make:entity User
+
+php bin/console doctrine:migration:diff <=> php bin/console doctrine:schema:update --dump-sql (but generate a file with every changements)
+php bin/console doctrine:migration:migrate <=> php bin/console doctrine:schema:update --force 
+
+FOR php bin/console doctrine:generate:entities MyBundle:MyEntity - is deprecated in sf4 (have to write each property and create a new migration)
+
+php bin/console debug:autowiding 
+=> return list of recipes use into the current class (for exemple from controller, we can call directly class from container like Request $request, Environnement $Twig etc ...)
+
+
+
